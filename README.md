@@ -4,7 +4,7 @@ Steps to run:
 
 1. cd backend and npm install
 
-2. cd frontend and  npm install
+2. cd ../frontend and  npm install
 
 Terminal 1 — backend
 cd backend && npm run dev

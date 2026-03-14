@@ -49,7 +49,7 @@ const TodoDetailPage = () => {
     try {
       const updated = await updateToDo(id, { title, description, status });
       setTodo(updated);
-      showToast("Updated successfully!");
+      showToast("Updated successfully");
     } catch {
       console.log("failed to update");
     } finally {
@@ -71,20 +71,26 @@ const TodoDetailPage = () => {
   if (loading)
     return (
       <div className="app">
-        <p className="loading">Loading</p>
+        <div className="home-container">
+          <p className="loading">Loading</p>
+        </div>
       </div>
     );
   if (error)
     return (
       <div className="app">
-        <p className="error-msg">Failed to load todo</p>
+        <div className="home-container">
+          <p className="error-msg">Failed to load todo</p>
+        </div>
       </div>
     );
 
   if (!todo)
     return (
       <div className="app">
-        <p className="error-msg">Todo not found</p>
+        <div className="home-container">
+          <p className="error-msg">Todo not found</p>
+        </div>
       </div>
     );
 
@@ -112,7 +118,7 @@ const TodoDetailPage = () => {
               className={`finish-btn ${status ? "completed" : ""}`}
               onClick={() => setStatus((prev) => !prev)}
             >
-              <FaCheck size={16} color={status ? "#222" : "#fff"} />
+              <FaCheck size={20} color={status ? "#222" : "#fff"} />
             </button>
           </div>
           <div className="field-group" style={{ flex: 1 }}>
